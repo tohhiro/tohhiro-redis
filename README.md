@@ -159,6 +159,18 @@ docker-compose logs redis
 > set key value
 > mset key value key value ...
 
+## 有効期限付きでセット
+
+> setex key time value
+
+例: 5 秒間の有効期限でセット
+
+> setex score 5 100
+
+### 残り時間を確認
+
+ttl key
+
 ## 取得
 
 > get key
@@ -167,13 +179,13 @@ docker-compose logs redis
 #　数値の増減の操作
 インクリメント
 
-> incr
+> incr key
 
 例: 元の score の値に+1 される
 
 > incr score
 
-> incrby
+> incrby key number
 
 例: 元の score の値に+10 される
 
@@ -181,14 +193,54 @@ docker-compose logs redis
 
 デクリメント
 
-> decr
+> decr key
 
 例: 元の score の値に-1 される
 
 > decr score
 
-> decrby
+> decrby key
 
 例: 元の score の値に-10 される
 
 > decrby score 10
+
+# key の一覧取得
+
+> keys pattern
+
+例: 全てのキーを取得
+
+> keys \*
+
+例: m を含むキーを取得
+
+> keys \*m\*
+
+# ランダムに key を表示
+
+> randomkey
+
+# key の存在確認
+
+> exists key
+
+例: score という key が存在するか
+
+> exists score
+
+# key 名を変更
+
+> rename old_name new_name
+
+例: key 名を old_name から new_name へ変更
+
+> rename old_name new_name
+
+# key を削除
+
+> del key
+
+例: score の key を削除
+
+> del score
