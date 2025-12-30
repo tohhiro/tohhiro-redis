@@ -1,0 +1,19 @@
+# Docker
+*.log
+
+# Redis data files (if mounted locally)
+dump.rdb
+appendonly.aof
+*.aof
+*.rdb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
