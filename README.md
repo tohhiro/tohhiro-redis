@@ -244,3 +244,39 @@ ttl key
 例: score の key を削除
 
 > del score
+
+# List（配列）
+
+## 末尾に追加
+
+> rpush key value
+
+## 末尾の要素を削除
+
+> rpop key
+
+## 先頭の要素を削除
+
+> lpop key
+
+## 確認
+
+memo: ここでの「l」は left、right の「l」ではなく、List の「l」
+
+> lrange key index_top index_end
+
+例: mycolor の 0 番目から 2 番目を取得
+
+> lrange mycolor 0 2
+
+### 先頭から 2 番目を取得
+
+> lindex key number
+
+### 要素数
+
+> llen key
+
+### トリム
+
+> ltrim key index_start index_end
