@@ -21,6 +21,8 @@ docker-compose up
 
 ```bash
 docker exec -it redis-learning redis-cli
+または
+docker compose exec redis redis-cli
 ```
 
 #### CLI から抜ける
@@ -33,11 +35,19 @@ docker exec -it redis-learning redis-cli
 
 #### データベースの選択
 
-(WIP)
+> select
+
+例: 1 番目の db へ接続する場合
+
+> select 1
+
+memo: デフォルトは 0
 
 #### データの保存
 
-（WIP）
+> bgsave
+
+memo: コマンドを打つと、`Background saving started`が表示（サーバー側もログが出る）
 
 #### GUI で接続（Redis Commander）
 
