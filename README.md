@@ -249,21 +249,21 @@ ttl key
 
 ## 末尾に追加
 
-> rpush key value
+> rpush list_name value
 
 ## 末尾の要素を削除
 
-> rpop key
+> rpop list_name
 
 ## 先頭の要素を削除
 
-> lpop key
+> lpop list_name
 
 ## 確認
 
 memo: ここでの「l」は left、right の「l」ではなく、List の「l」
 
-> lrange key index_top index_end
+> lrange list_name index_top index_end
 
 例: mycolor の 0 番目から 2 番目を取得
 
@@ -271,12 +271,44 @@ memo: ここでの「l」は left、right の「l」ではなく、List の「l�
 
 ### 先頭から 2 番目を取得
 
-> lindex key number
+> lindex list_name number
 
 ### 要素数
 
-> llen key
+> llen list_name
 
 ### トリム
 
-> ltrim key index_start index_end
+> ltrim list_name index_start index_end
+
+# Set（順不同）
+
+## 追加
+
+> sadd set_name value
+
+## 確認
+
+> smembers set_name
+
+## 値の削除
+
+> srem set_name value
+
+## 和集合（全てを結合）
+
+> sunion set_name1 set_name2
+
+## 積集合（共通の値のみ）
+
+> sinter set_name1 set_name2
+
+## 差集合
+
+> sdiff set_name1 set_name2
+
+## 集合から新たな Set を作成
+
+例: 和集合から新たな Set を作成する
+
+> sunionstore new_set_name set_name1 set_name2
