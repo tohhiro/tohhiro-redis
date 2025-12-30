@@ -151,3 +151,44 @@ docker-compose logs redis
 
 - Hash
   -- 連想配列（ラベルと値のセット）
+
+# 値のセットと取得
+
+## セット
+
+> set key value
+> mset key value key value ...
+
+## 取得
+
+> get key
+> mget key key key ...
+
+#　数値の増減の操作
+インクリメント
+
+> incr
+
+例: 元の score の値に+1 される
+
+> incr score
+
+> incrby
+
+例: 元の score の値に+10 される
+
+> incrby score 10
+
+デクリメント
+
+> decr
+
+例: 元の score の値に-1 される
+
+> decr score
+
+> decrby
+
+例: 元の score の値に-10 される
+
+> decrby score 10
