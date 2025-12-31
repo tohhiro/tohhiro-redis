@@ -334,3 +334,60 @@ memo: ここでの「l」は left、right の「l」ではなく、List の「l�
 ## 数値が高いものからランキング
 
 > zrevrank set_name value
+
+# Hash
+
+## Set
+
+> hset hash_name key value
+> hmset hash_name key value key value ...
+
+## Get
+
+> hget hash_name key
+> hmget hash_name key key ...
+
+## 長さ
+
+> hlen hash_name
+
+## Key の一覧
+
+> hkeys hash_name
+
+## 値の一覧
+
+> hvals hash_name
+
+## key と value を同時に確認
+
+> hgetall hash_name
+
+# Type
+
+> type list_name
+> type set_name
+> type key
+
+# Sort
+
+## 昇順
+
+> sort name
+
+## 降順
+
+> sort name desc
+
+## 制限
+
+> sort name desc limit start_number end_number
+
+例: score を降順にして 0 番目から 3 番目まで
+
+> sort score desc limit 0 3
+
+## 文字列の場合
+
+> sort name alpha
+> sort name alpha desc
