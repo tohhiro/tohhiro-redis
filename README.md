@@ -312,3 +312,25 @@ memo: ここでの「l」は left、right の「l」ではなく、List の「l�
 例: 和集合から新たな Set を作成する
 
 > sunionstore new_set_name set_name1 set_name2
+
+# Sorted Set
+
+## 追加
+
+> zadd set_name number value
+
+## 数値が低いものからソート
+
+> zrange set_name 0 -1
+
+## 数値が高いものからソート
+
+> zrevrange set_name 0 -1
+
+## 数値が低いものからランキング
+
+> zrank set_name value
+
+## 数値が高いものからランキング
+
+> zrevrank set_name value
